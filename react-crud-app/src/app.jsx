@@ -1,21 +1,24 @@
+import * as React from 'react';
 import { Box, Container, Grid } from '@mui/material';
-import React from 'react';
+import ProductService from 'services/product-service';
 import ItemCard from './components/item-card';
 
 const App = () => {
-  const [items, setItems] = React.useState([]);
+  const [products, setProducts] = React.useState([]);
 
   React.useEffect(() => {
-    fetch('http://localhost:8000/items')
-      .then((res) => res.json())
-      .then((fetchedItems) => setItems(fetchedItems));
+    (async () => {
+      const fetchedProducts = await ProductService.fetchAllProducts();
+      setProducts(fetchedProducts);
+      console.log(fetchedProducts);
+    })();
   }, []);
 
   return (
     <Box>
       <Container maxWidth="xl">
         <Grid container spacing={2} sx={{ py: 4, px: 3 }}>
-          {items.map((item) => (
+          {products.map((item) => (
             <Grid
               id={item.id}
               key={item.id}
