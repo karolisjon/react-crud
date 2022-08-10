@@ -87,6 +87,9 @@ const ItemCard = ({
     </Box>
     <CardActions sx={{ p: 0 }}>
       <ItemCardButton>
+        Update
+      </ItemCardButton>
+      <ItemCardButton>
         Delete
       </ItemCardButton>
     </CardActions>
