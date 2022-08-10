@@ -1,10 +1,10 @@
 const databaseAddress = 'http://localhost:8000';
 
 const fetchAllProducts = async () => {
-  const response = await fetch(`${databaseAddress}/items`);
-  const items = await response.json();
+  const response = await fetch(`${databaseAddress}/products`);
+  const products = await response.json();
 
-  return items;
+  return products;
 };
 
 const ProductService = {
