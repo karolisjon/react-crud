@@ -31,7 +31,12 @@ const App = () => {
               xl={3}
               sx={{ mb: 1 }}
             >
-              <ItemCard />
+              <ItemCard
+                title={item.title}
+                img={item.img}
+                description={item.description}
+                price={item.price}
+              />
             </Grid>
           ))}
         </Grid>

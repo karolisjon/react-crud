@@ -7,7 +7,7 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
-import CustomButton from './custom-button';
+import ItemCardButton from './item-card-button';
 
 const ItemCard = ({
   title,
@@ -15,7 +15,6 @@ const ItemCard = ({
   category,
   price,
   img,
-  wood,
 }) => (
   <Card sx={{
     display: 'flex',
@@ -52,7 +51,7 @@ const ItemCard = ({
         <Typography gutterBottom variant="body1" component="h6" sx={{ fontStyle: 'italic', fontSize: 14 }}>
           {category}
         </Typography>
-        <Typography
+        {/* <Typography
           gutterBottom
           variant="body1"
           component="div"
@@ -64,7 +63,7 @@ const ItemCard = ({
           }}
         >
           {wood}
-        </Typography>
+        </Typography> */}
         <Typography
           gutterBottom
           variant="body2"
@@ -87,9 +86,9 @@ const ItemCard = ({
       </CardContent>
     </Box>
     <CardActions sx={{ p: 0 }}>
-      <CustomButton>
-        Buy now
-      </CustomButton>
+      <ItemCardButton>
+        Delete
+      </ItemCardButton>
     </CardActions>
   </Card>
 );
