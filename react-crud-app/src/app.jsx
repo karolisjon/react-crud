@@ -13,6 +13,14 @@ const App = () => {
     })();
   }, []);
 
+  const productDeletion = async (id) => {
+    const productDeleted = await ProductService.deleteProduct(id);
+    if (productDeleted) {
+      const fetchedProducts = await ProductService.fetchAllProducts();
+      setProducts(fetchedProducts);
+    }
+  };
+
   return (
     <Box>
       <Container maxWidth="xl">
@@ -42,6 +50,7 @@ const App = () => {
                 img={img}
                 description={description}
                 price={price}
+                onProductDeletion={() => productDeletion(id)}
               />
             </Grid>
           ))}
