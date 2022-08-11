@@ -1,10 +1,27 @@
 const databaseAddress = 'http://localhost:8000';
 
-const fetchAllProducts = async () => {
-  const response = await fetch(`${databaseAddress}/products`);
-  const products = await response.json();
+// const formatProduct = ({
+//   id,
+//   title,
+//   img,
+//   description,
+//   price,
+//   category,
+// }) => ({
+//   id,
+//   title,
+//   img,
+//   description,
+//   price,
+//   category: category.title,
+// });
 
-  return products;
+const fetchAllProducts = async () => {
+  const response = await fetch(`${databaseAddress}/products/?_expand=category`);
+  const items = await response.json();
+
+  // return items.map(formatProduct);
+  return items;
 };
 
 const ProductService = {

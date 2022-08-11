@@ -10,7 +10,6 @@ const App = () => {
     (async () => {
       const fetchedProducts = await ProductService.fetchAllProducts();
       setProducts(fetchedProducts);
-      console.log(fetchedProducts);
     })();
   }, []);
 
@@ -18,10 +17,10 @@ const App = () => {
     <Box>
       <Container maxWidth="xl">
         <Grid container spacing={2} sx={{ py: 4, px: 3 }}>
-          {products.map((item) => (
+          {products.map((product) => (
             <Grid
-              id={item.id}
-              key={item.id}
+              id={product.id}
+              key={product.id}
               item
               alignItems="stretch"
               xs={12}
@@ -32,10 +31,10 @@ const App = () => {
               sx={{ mb: 1 }}
             >
               <ItemCard
-                title={item.title}
-                img={item.img}
-                description={item.description}
-                price={item.price}
+                title={product.title}
+                img={product.img}
+                description={product.description}
+                price={product.price}
               />
             </Grid>
           ))}

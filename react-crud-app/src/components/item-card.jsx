@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {
   Box,
+  Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
   Typography,
 } from '@mui/material';
-import ItemCardButton from './item-card-button';
 
 const ItemCard = ({
   title,
@@ -86,12 +86,22 @@ const ItemCard = ({
       </CardContent>
     </Box>
     <CardActions sx={{ p: 0 }}>
-      <ItemCardButton>
+      <Button
+        variant="contained"
+        color="warning"
+        fullWidth
+        sx={{ borderRadius: 0 }}
+      >
         Update
-      </ItemCardButton>
-      <ItemCardButton>
+      </Button>
+      <Button
+        variant="contained"
+        color="error"
+        fullWidth
+        sx={{ borderRadius: 0 }}
+      >
         Delete
-      </ItemCardButton>
+      </Button>
     </CardActions>
   </Card>
 );
