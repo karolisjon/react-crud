@@ -8,8 +8,10 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import ProductService from 'services/product-service';
 
 const ItemCard = ({
+  id,
   title,
   description,
   category,
@@ -99,6 +101,7 @@ const ItemCard = ({
         color="error"
         fullWidth
         sx={{ borderRadius: 0 }}
+        onClick={() => ProductService.deleteProduct(id)}
       >
         Delete
       </Button>

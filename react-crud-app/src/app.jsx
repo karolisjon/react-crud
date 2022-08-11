@@ -17,10 +17,16 @@ const App = () => {
     <Box>
       <Container maxWidth="xl">
         <Grid container spacing={2} sx={{ py: 4, px: 3 }}>
-          {products.map((product) => (
+          {products.map(({
+            id,
+            title,
+            img,
+            description,
+            price,
+          }) => (
             <Grid
-              id={product.id}
-              key={product.id}
+              id={id}
+              key={id}
               item
               alignItems="stretch"
               xs={12}
@@ -31,10 +37,11 @@ const App = () => {
               sx={{ mb: 1 }}
             >
               <ItemCard
-                title={product.title}
-                img={product.img}
-                description={product.description}
-                price={product.price}
+                id={id}
+                title={title}
+                img={img}
+                description={description}
+                price={price}
               />
             </Grid>
           ))}
