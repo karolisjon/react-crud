@@ -21,9 +21,9 @@ const AddProductForm = ({ onSubmit }) => {
     event.preventDefault();
     onSubmit({
       title,
-      category,
-      imageURL,
-      price,
+      categoryId: category,
+      img: imageURL,
+      price: Number(price),
       description,
     });
   };

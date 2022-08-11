@@ -26,14 +26,16 @@ const App = () => {
     }
   };
 
-  const createProduct = (productProps) => {
-    console.log(productProps);
+  const productCreation = async (productProps) => {
+    await ProductService.createProduct(productProps);
+    const fetchedProducts = await ProductService.fetchAllProducts();
+    setProducts(fetchedProducts);
   };
 
   return (
     <Box>
       <Container maxWidth="xl">
-        <AddProductForm onSubmit={createProduct} />
+        <AddProductForm onSubmit={productCreation} />
         <Grid container spacing={2} sx={{ py: 4, px: 3 }}>
           {products.map(({
             id,
@@ -56,7 +58,6 @@ const App = () => {
               sx={{ mb: 1 }}
             >
               <ItemCard
-                id={id}
                 title={title}
                 img={img}
                 description={description}

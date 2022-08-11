@@ -30,6 +30,16 @@ const fetchProductCategories = async () => {
   return productCategories;
 };
 
+const createProduct = async (productProps) => {
+  await fetch(`${databaseAddress}/products`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(productProps),
+  });
+};
+
 const deleteProduct = async (id) => {
   await fetch(`${databaseAddress}/products/${id}`, {
     method: 'DELETE',
@@ -41,6 +51,7 @@ const deleteProduct = async (id) => {
 const ProductService = {
   fetchAllProducts,
   fetchProductCategories,
+  createProduct,
   deleteProduct,
 };
 
