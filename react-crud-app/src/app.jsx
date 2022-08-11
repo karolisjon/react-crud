@@ -41,6 +41,7 @@ const App = () => {
             img,
             description,
             price,
+            category,
           }) => (
             <Grid
               id={id}
@@ -60,6 +61,7 @@ const App = () => {
                 img={img}
                 description={description}
                 price={price}
+                category={category}
                 onProductDeletion={() => productDeletion(id)}
               />
             </Grid>
