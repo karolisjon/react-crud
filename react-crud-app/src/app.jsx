@@ -26,10 +26,14 @@ const App = () => {
     }
   };
 
+  const createProduct = (productProps) => {
+    console.log(productProps);
+  };
+
   return (
     <Box>
       <Container maxWidth="xl">
-        <AddProductForm />
+        <AddProductForm onSubmit={createProduct} />
         <Grid container spacing={2} sx={{ py: 4, px: 3 }}>
           {products.map(({
             id,

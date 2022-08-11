@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import ProductService from 'services/product-service';
 
-const AddProductForm = () => {
+const AddProductForm = ({ onSubmit }) => {
   const [title, setTitle] = React.useState('');
   const [category, setCategory] = React.useState('');
   const [imageURL, setImageURL] = React.useState('');
@@ -19,7 +19,7 @@ const AddProductForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({
+    onSubmit({
       title,
       category,
       imageURL,
@@ -36,7 +36,7 @@ const AddProductForm = () => {
   }, []);
 
   return (
-    <Container maxWidth="xl" sx={{ px: 4, pt: 4 }}>
+    <Container maxWidth="md" sx={{ px: 4, pt: 4 }}>
       <Box component="form" onSubmit={handleSubmit}>
         <Typography variant="h4" component="h1">New product details</Typography>
         <Box sx={{
