@@ -23,6 +23,13 @@ const fetchAllProducts = async () => {
   return items.map(formatProduct);
 };
 
+const fetchProductCategories = async () => {
+  const response = await fetch(`${databaseAddress}/categories`);
+  const productCategories = await response.json();
+
+  return productCategories;
+};
+
 const deleteProduct = async (id) => {
   await fetch(`${databaseAddress}/products/${id}`, {
     method: 'DELETE',
@@ -33,6 +40,7 @@ const deleteProduct = async (id) => {
 
 const ProductService = {
   fetchAllProducts,
+  fetchProductCategories,
   deleteProduct,
 };
 

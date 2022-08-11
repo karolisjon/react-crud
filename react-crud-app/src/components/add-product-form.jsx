@@ -7,21 +7,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-
-const categories = [
-  {
-    id: 1,
-    label: 'Category 1',
-  },
-  {
-    id: 2,
-    label: 'Category 2',
-  },
-  {
-    id: 3,
-    label: 'Category 3',
-  },
-];
+import ProductService from 'services/product-service';
 
 const AddProductForm = () => {
   const [title, setTitle] = React.useState('');
@@ -29,6 +15,7 @@ const AddProductForm = () => {
   const [imageURL, setImageURL] = React.useState('');
   const [price, setPrice] = React.useState('');
   const [description, setDescription] = React.useState('');
+  const [categoriesOption, setCategoriesOption] = React.useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,6 +28,13 @@ const AddProductForm = () => {
     });
   };
 
+  React.useEffect(() => {
+    (async () => {
+      const fetchedProductCategories = await ProductService.fetchProductCategories();
+      setCategoriesOption(fetchedProductCategories);
+    })();
+  }, []);
+
   return (
     <Container maxWidth="xl" sx={{ px: 4, pt: 4 }}>
       <Box component="form" onSubmit={handleSubmit}>
@@ -50,6 +44,7 @@ const AddProductForm = () => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           mb: 2,
+          gap: 2,
         }}
         >
           <TextField
@@ -60,7 +55,6 @@ const AddProductForm = () => {
             onChange={(event) => setTitle(event.target.value)}
           />
           <TextField
-            id="standard-select-currency"
             select
             label="Category"
             value={category}
@@ -68,9 +62,9 @@ const AddProductForm = () => {
             variant="standard"
             fullWidth
           >
-            {categories.map(({ id, label }) => (
-              <MenuItem key={id} value={id}>
-                {label}
+            {categoriesOption.map((option) => (
+              <MenuItem key={option.id} value={option.id}>
+                {option.title}
               </MenuItem>
             ))}
           </TextField>
