@@ -30,6 +30,7 @@ const App = () => {
     await ProductService.createProduct(productProps);
     const fetchedProducts = await ProductService.fetchAllProducts();
     setProducts(fetchedProducts);
+    alert('Product created successfully');
   };
 
   return (
