@@ -1,6 +1,11 @@
 import * as React from 'react';
-import { Box, Container, Grid } from '@mui/material';
+import {
+  Box,
+  Container,
+  Grid,
+} from '@mui/material';
 import ProductService from 'services/product-service';
+import AddProductForm from 'components/add-product-form';
 import ItemCard from './components/item-card';
 
 const App = () => {
@@ -24,6 +29,7 @@ const App = () => {
   return (
     <Box>
       <Container maxWidth="xl">
+        <AddProductForm />
         <Grid container spacing={2} sx={{ py: 4, px: 3 }}>
           {products.map(({
             id,
