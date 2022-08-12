@@ -25,22 +25,6 @@
       "img": "https://a.1stdibscdn.com/high-style-mid-century-mahogany-dining-chair-w-woven-wicker-seat-for-sale-picture-2/f_9474/1567692774280/IMG_9509_master.jpg?width=768"
     },
     {
-      "id": "2CFB722E-51A2-A442-FBB7-A4658809A146",
-      "title": "Wooden box",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "categoryId": 3,
-      "price": 139.99,
-      "img": "https://images.squarespace-cdn.com/content/v1/58dc0327d1758e873aa78bff/1540219350701-O2IBOST9065ZST5T0430/ke17ZwdGBToddI8pDm48kHH9S2ID7_bpupQnTdrPcoF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0nQwvinDXPV4EYh2MRzm-RRB5rUELEv7EY2n0AZOrEupxpSyqbqKSgmzcCPWV5WMiQ/IMG_7768.jpg"
-    },
-    {
-      "id": "BCEE647C-C114-5EA7-F529-17B79089E274",
-      "title": "Wooden jewelry box",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "categoryId": 3,
-      "price": 199.99,
-      "img": "https://i.pinimg.com/originals/da/d3/12/dad31229d9c469eb83973eea3def4690.jpg"
-    },
-    {
       "id": "E61A159D-3E61-3C83-D51F-FE8E39B44098",
       "title": "Yarn bowl",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -79,6 +63,14 @@
       "price": 19.99,
       "description": "If you are trying to get your home to have some more wood and give it that feel, you are on the right path. This is because we know just how it feels to have wooden decorations in a home, whether rustic wood, modern wood, bamboo, or whatever else.",
       "id": "90O-YWv"
+    },
+    {
+      "title": "something",
+      "categoryId": 2,
+      "img": "https://cdn11.bigcommerce.com/s-6rslcevls7/images/stencil/532x532/products/1642/9839/700595__48074.1658789100.jpg?c=1",
+      "price": 69.23,
+      "description": "hmmmmmmmmm",
+      "id": "TNAU8Uw"
     }
   ],
   "categories": [

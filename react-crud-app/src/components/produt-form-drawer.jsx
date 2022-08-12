@@ -42,9 +42,10 @@ const ProductFormDrawer = ({ onSubmit }) => {
   return (
     <>
       <Container maxWidth="xl">
-        <Box sx={{
-          display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', my: 3,
-        }}
+        <Box
+          sx={{
+            display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', my: 3,
+          }}
         >
           <Button
             type="submit"
