@@ -54,19 +54,6 @@ const ItemCard = ({
         <Typography gutterBottom variant="body1" component="h6" sx={{ fontStyle: 'italic', fontSize: 14 }}>
           {category}
         </Typography>
-        {/* <Typography
-          gutterBottom
-          variant="body1"
-          component="div"
-          sx={{
-            fontStyle: 'italic',
-            fontSize: 14,
-            fontWeight: 600,
-            mb: 2,
-          }}
-        >
-          {wood}
-        </Typography> */}
         <Typography
           gutterBottom
           variant="body2"
