@@ -52,7 +52,7 @@
       "id": "A297BE56-C8B8-D933-CEAA-6C903469AB56",
       "title": "Wooden vintage vase",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "categoryId": 3,
+      "categoryId": 2,
       "price": 149.99,
       "img": "https://cdn.shopify.com/s/files/1/0700/8849/products/image_6904a60c-9318-4dc9-8e35-1e92052e8e1e_1024x1024.jpg?v=1627955573"
     },
@@ -95,6 +95,22 @@
       "price": 999,
       "description": "qcwevrevev",
       "id": "6PuYY9b"
+    },
+    {
+      "title": "lentele puodeliui",
+      "categoryId": 1,
+      "img": "https://cdn11.bigcommerce.com/s-6rslcevls7/images/stencil/532x532/products/1642/9839/700595__48074.1658789100.jpg?c=1",
+      "price": 66,
+      "description": "vv",
+      "id": "AlO0KX3"
+    },
+    {
+      "title": "vvevv",
+      "categoryId": 2,
+      "img": "https://www.pinkvilla.com/files/styles/amp_metadata_content_image/public/best_home_decor_items_under_rs_999_to_redecorate_your_living_room.jpg",
+      "price": 6,
+      "description": "aa",
+      "id": "PeZdm0Z"
     }
   ],
   "categories": [

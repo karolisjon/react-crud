@@ -38,6 +38,8 @@ const ProductFormDrawer = ({ onSubmit }) => {
     setPrice('');
     setDescription('');
     setCategoriesOption([]);
+
+    setFormDrawerOpen(false);
   };
 
   React.useEffect(() => {
