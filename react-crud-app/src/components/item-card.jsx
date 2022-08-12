@@ -8,6 +8,8 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const ItemCard = ({
   title,
@@ -93,6 +95,7 @@ const ItemCard = ({
         fullWidth
         sx={{ borderRadius: 0 }}
       >
+        <EditIcon fontSize="small" />
         Update
       </Button>
       <Button
@@ -102,6 +105,7 @@ const ItemCard = ({
         sx={{ borderRadius: 0 }}
         onClick={onProductDeletion}
       >
+        <DeleteForeverIcon fontSize="small" />
         Delete
       </Button>
     </CardActions>

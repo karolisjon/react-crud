@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
   Box,
   Button,
@@ -7,8 +8,8 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import * as React from 'react';
 import ProductService from 'services/product-service';
+import AddIcon from '@mui/icons-material/Add';
 
 const ProductFormDrawer = ({ onSubmit }) => {
   const [title, setTitle] = React.useState('');
@@ -37,90 +38,101 @@ const ProductFormDrawer = ({ onSubmit }) => {
   }, []);
 
   return (
-    <Drawer
-      anchor="left"
-      variant="persistent"
-      open="true"
-    >
-      <Box
-        component="form"
-        onSubmit={handleSubmit}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2,
-          width: '500px',
-          p: 4,
-        }}
+    <>
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        sx={{ borderRadius: 0 }}
       >
-        <Typography variant="h4" component="h1">New product details</Typography>
-        <Divider />
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2,
-          mb: 2,
-        }}
+        New button
+      </Button>
+      <Drawer
+        anchor="left"
+        variant="temporary"
+        open="true"
+      >
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2,
+            width: '500px',
+            p: 4,
+          }}
         >
-          <TextField
-            label="Title"
-            variant="standard"
-            fullWidth
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-          />
-          <TextField
-            label="Image URL"
-            variant="standard"
-            fullWidth
-            value={imageURL}
-            onChange={(event) => setImageURL(event.target.value)}
-          />
-          <TextField
-            select
-            label="Category"
-            value={category}
-            onChange={(event) => setCategory(event.target.value)}
-            variant="standard"
-            fullWidth
+          <Typography variant="h4" component="h1">New product details</Typography>
+          <Divider />
+          <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2,
+            mb: 2,
+          }}
           >
-            {categoriesOption.map((option) => (
-              <MenuItem key={option.id} value={option.id}>
-                {option.title}
-              </MenuItem>
-            ))}
-          </TextField>
-          <Box sx={{ mb: 2 }}>
             <TextField
-              label="Description"
+              label="Title"
               variant="standard"
-              multiline
               fullWidth
-              value={description}
-              onChange={(event) => setDescription(event.target.value)}
+              value={title}
+              onChange={(event) => setTitle(event.target.value)}
+            />
+            <TextField
+              label="Image URL"
+              variant="standard"
+              fullWidth
+              value={imageURL}
+              onChange={(event) => setImageURL(event.target.value)}
+            />
+            <TextField
+              select
+              label="Category"
+              value={category}
+              onChange={(event) => setCategory(event.target.value)}
+              variant="standard"
+              fullWidth
+            >
+              {categoriesOption.map((option) => (
+                <MenuItem key={option.id} value={option.id}>
+                  {option.title}
+                </MenuItem>
+              ))}
+            </TextField>
+            <Box sx={{ mb: 2 }}>
+              <TextField
+                label="Description"
+                variant="standard"
+                multiline
+                fullWidth
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+              />
+            </Box>
+            <TextField
+              label="Price"
+              variant="standard"
+              fullWidth
+              value={price}
+              onChange={(event) => setPrice(event.target.value)}
             />
           </Box>
-          <TextField
-            label="Price"
-            variant="standard"
-            fullWidth
-            value={price}
-            onChange={(event) => setPrice(event.target.value)}
-          />
+          <Box>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ borderRadius: 0 }}
+            >
+              <AddIcon fontSize="small" />
+              Add new product
+            </Button>
+          </Box>
         </Box>
-        <Box>
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            fullWidth
-            sx={{ borderRadius: 0 }}
-          >
-            Add new product
-          </Button>
-        </Box>
-      </Box>
-    </Drawer>
+      </Drawer>
+    </>
   );
 };
 
