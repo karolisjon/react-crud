@@ -23,6 +23,7 @@ const ProductFormDrawer = ({ onSubmit }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     onSubmit({
       title,
       categoryId: category,
@@ -30,6 +31,13 @@ const ProductFormDrawer = ({ onSubmit }) => {
       price: Number(price),
       description,
     });
+
+    setTitle('');
+    setCategory('');
+    setImageURL('');
+    setPrice('');
+    setDescription('');
+    setCategoriesOption([]);
   };
 
   React.useEffect(() => {
