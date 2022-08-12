@@ -17,7 +17,6 @@ const ProductFormDrawer = ({ onSubmit }) => {
   const [price, setPrice] = React.useState('');
   const [description, setDescription] = React.useState('');
   const [categoriesOption, setCategoriesOption] = React.useState([]);
-  const formDrawerWidth = '600px';
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,17 +40,28 @@ const ProductFormDrawer = ({ onSubmit }) => {
     <Drawer
       anchor="left"
       variant="persistent"
-      width={formDrawerWidth}
       open="true"
     >
       <Box
         component="form"
         onSubmit={handleSubmit}
-        sx={{ p: 2 }}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
+          width: '500px',
+          p: 4,
+        }}
       >
         <Typography variant="h4" component="h1">New product details</Typography>
         <Divider />
-        <Box>
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
+          mb: 2,
+        }}
+        >
           <TextField
             label="Title"
             variant="standard"
@@ -103,6 +113,7 @@ const ProductFormDrawer = ({ onSubmit }) => {
             type="submit"
             variant="contained"
             color="primary"
+            fullWidth
             sx={{ borderRadius: 0 }}
           >
             Add new product
