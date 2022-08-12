@@ -1,68 +1,68 @@
 import * as React from 'react';
 import {
   Box,
-  // Box,
-  Button, Container, Divider,
-  // Divider,
-  // Drawer,
-  // MenuItem,
-  // TextField,
-  // Typography,
+  Button,
+  Container,
+  Divider,
+  Drawer,
+  MenuItem,
+  TextField,
+  Typography,
 } from '@mui/material';
-// import ProductService from 'services/product-service';
+import ProductService from 'services/product-service';
 import AddIcon from '@mui/icons-material/Add';
 
-const ProductFormDrawer = () => (
-// { onSubmit }
+const ProductFormDrawer = ({ onSubmit }) => {
+  const [formDrawerOpen, setFormDrawerOpen] = React.useState(false);
+  const [title, setTitle] = React.useState('');
+  const [category, setCategory] = React.useState('');
+  const [imageURL, setImageURL] = React.useState('');
+  const [price, setPrice] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const [categoriesOption, setCategoriesOption] = React.useState([]);
 
-  // const [title, setTitle] = React.useState('');
-  // const [category, setCategory] = React.useState('');
-  // const [imageURL, setImageURL] = React.useState('');
-  // const [price, setPrice] = React.useState('');
-  // const [description, setDescription] = React.useState('');
-  // const [categoriesOption, setCategoriesOption] = React.useState([]);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit({
+      title,
+      categoryId: category,
+      img: imageURL,
+      price: Number(price),
+      description,
+    });
+  };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   onSubmit({
-  //     title,
-  //     categoryId: category,
-  //     img: imageURL,
-  //     price: Number(price),
-  //     description,
-  //   });
-  // };
+  React.useEffect(() => {
+    (async () => {
+      const fetchedProductCategories = await ProductService.fetchProductCategories();
+      setCategoriesOption(fetchedProductCategories);
+    })();
+  }, []);
 
-  // React.useEffect(() => {
-  //   (async () => {
-  //     const fetchedProductCategories = await ProductService.fetchProductCategories();
-  //     setCategoriesOption(fetchedProductCategories);
-  //   })();
-  // }, []);
-
-  <>
-    <Container maxWidth="xl">
-      <Box sx={{
-        display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', my: 3,
-      }}
-      >
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          sx={{ borderRadius: 0 }}
-          onClick={() => console.log('clicked')}
+  return (
+    <>
+      <Container maxWidth="xl">
+        <Box sx={{
+          display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', my: 3,
+        }}
         >
-          <AddIcon fontSize="small" />
-          Create new product
-        </Button>
-      </Box>
-      <Divider />
-    </Container>
-    {/* <Drawer
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            sx={{ borderRadius: 0 }}
+            onClick={() => setFormDrawerOpen(!formDrawerOpen)}
+          >
+            <AddIcon fontSize="small" />
+            Create new product
+          </Button>
+        </Box>
+        <Divider />
+      </Container>
+      <Drawer
         anchor="left"
-        variant="temporary"
-        open="true"
+        variant={formDrawerOpen ? 'permanent' : 'temporary'}
+        onClose={() => setFormDrawerOpen(false)}
       >
         <Box
           component="form"
@@ -143,7 +143,9 @@ const ProductFormDrawer = () => (
             </Button>
           </Box>
         </Box>
-              </Drawer> */}
-  </>
-);
+      </Drawer>
+    </>
+  );
+};
+
 export default ProductFormDrawer;
