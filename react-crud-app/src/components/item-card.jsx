@@ -18,6 +18,7 @@ const ItemCard = ({
   price,
   img,
   onProductDeletion,
+  onProductEdit,
 }) => (
   <Card sx={{
     display: 'flex',
@@ -81,6 +82,7 @@ const ItemCard = ({
         color="warning"
         fullWidth
         sx={{ borderRadius: 0 }}
+        onClick={onProductEdit}
       >
         <EditIcon fontSize="small" />
         Update

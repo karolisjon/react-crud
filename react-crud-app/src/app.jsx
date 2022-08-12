@@ -18,6 +18,10 @@ const App = () => {
     })();
   }, []);
 
+  const productEdit = (id) => {
+    console.log(id);
+  };
+
   const productDeletion = async (id) => {
     const productDeleted = await ProductService.deleteProduct(id);
     if (productDeleted) {
@@ -64,6 +68,7 @@ const App = () => {
                 price={price}
                 category={category}
                 onProductDeletion={() => productDeletion(id)}
+                onProductEdit={() => productEdit(id)}
               />
             </Grid>
           ))}
