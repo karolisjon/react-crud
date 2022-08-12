@@ -5,7 +5,7 @@ import {
   Grid,
 } from '@mui/material';
 import ProductService from 'services/product-service';
-import AddProductForm from 'components/add-product-form';
+import ProductFormDrawer from 'components/produt-form-drawer';
 import ItemCard from './components/item-card';
 
 const App = () => {
@@ -26,17 +26,16 @@ const App = () => {
     }
   };
 
-  const productCreation = async (productProps) => {
-    await ProductService.createProduct(productProps);
-    const fetchedProducts = await ProductService.fetchAllProducts();
-    setProducts(fetchedProducts);
-    alert('Product created successfully');
-  };
+  // const productCreation = async (productProps) => {
+  //   await ProductService.createProduct(productProps);
+  //   const fetchedProducts = await ProductService.fetchAllProducts();
+  //   setProducts(fetchedProducts);
+  // };
 
   return (
     <Box>
       <Container maxWidth="xl">
-        <AddProductForm onSubmit={productCreation} />
+        <ProductFormDrawer />
         <Grid container spacing={2} sx={{ py: 4, px: 3 }}>
           {products.map(({
             id,
