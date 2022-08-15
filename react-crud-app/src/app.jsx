@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import ProductService from 'services/product-service';
 import ProductFormDrawer from 'components/produt-form-drawer';
-import ItemCard from './components/item-card';
+import ItemCard from './components/product-card';
 
 const App = () => {
   const [products, setProducts] = React.useState([]);
