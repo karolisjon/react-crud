@@ -8,7 +8,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Karla, sans-serif;',
+    fontFamily: 'Karla',
   },
 });
 
