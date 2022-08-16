@@ -11,7 +11,7 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-const ItemCard = ({
+const ProductCard = ({
   title,
   description,
   category,
@@ -101,4 +101,4 @@ const ItemCard = ({
   </Card>
 );
 
-export default ItemCard;
+export default ProductCard;

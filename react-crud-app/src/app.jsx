@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import ProductService from 'services/product-service';
 import ProductFormDrawer from 'components/produt-form-drawer';
-import ItemCard from './components/product-card';
+import ProductCard from './components/product-card';
 
 const App = () => {
   const [products, setProducts] = React.useState([]);
@@ -61,7 +61,7 @@ const App = () => {
               xl={3}
               sx={{ mb: 1 }}
             >
-              <ItemCard
+              <ProductCard
                 title={title}
                 img={img}
                 description={description}
